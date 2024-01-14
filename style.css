@@ -31,6 +31,10 @@ a:hover {opacity: .75;}
   font-size: 1rem;
   transition: opacity 300ms, transform 300ms;
 }
+.btn-primary:hover {
+  opacity: .75;
+  transform: scale(.95);
+}
 
 /* ## main nav */
 .main-nav {
@@ -70,10 +74,28 @@ a:hover {opacity: .75;}
 }
 .banner-sect .img-box {
   text-align: center;
-  background: url('./images/circle.svg');
+  background-image: url('./images/circle.svg');
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
+  background-size: 100%;
+  animation: growshrink 1s infinite;
+}
+.banner-sect .img-box img {
+  transition: all .5s;
+
+}
+.banner-sect .img-box img:hover {
+  transform: rotateZ(60deg);
+}
+
+@keyframes growshrink {
+  0% {
+    background-size: 100%;
+  }
+  50% {
+    background-size: 120%;
+  }
+  100% {background-size: 100%;}
 }
 
 /* ## sponsors-sect */
